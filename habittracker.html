@@ -122,4 +122,50 @@
         background-color: mistyrose;
     }
 </style>
+/<script>
+    /* GET THE DATE */
+    var date =new Date();
+    console.log(date);
+
+    /* EXTRACT THE CURRENT DATE INFO */
+    var currentDate = date.getDate();
+    var currentMonth = date.getMonth();
+    var currentDay = date.getDay();
+    var currentYear = date.getFullYear();
+
+    console.log(currentDate);
+    console.log(currentMonth);
+    console.log(currentDay);
+    console.log(currentYear);
+
+    var months = [
+    "January", 
+    "February", 
+    "March", 
+    "April", 
+    "May", 
+    "June", 
+    "July", 
+    "August", 
+    "September", 
+    "October", 
+    "November", 
+    "December"
+    ];
+    /* SET THE CORRECT MONTH */
+    var title = document.getElementById("title");
+    title.innerHTML = months[currentMonth];
+
+    /* UPDATE CALENDAR INFO */
+    var habitTitle = document.getElementById("habitTitle");
+    habitTitle.onclick = function () {
+
+        let habits = prompt("What's your habit", habitTitle.innerHTML);
+        if(habits.length == 0 ){
+            habitTitle.innerHTML = "Click to see your habit!";
+        }else{
+            habitTitle.innerHTML = habits;
+        }
+    }
+</script>
 </html>
